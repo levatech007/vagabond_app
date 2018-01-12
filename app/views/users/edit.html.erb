@@ -1,0 +1,16 @@
+<div class="row justify-content-md-center">
+  <div class="col-sm-6">
+    <%= form_for @user do |f| %>
+      <div class="form-group">
+        <%= f.text_field :first_name, placeholder: "First name", class:"form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :last_name, placeholder: "Last name", class:"form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :user_city, placeholder: "Your city", class:"form-control" %>
+      </div>
+      <%= f.submit "Update profile", class: "btn btn-outline-dark" %>
+    <% end %>
+    </div>
+  </div>

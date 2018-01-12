@@ -12,16 +12,18 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="container">
-          <div class="logo"> NameOfApp </div>
-        <div>
-          <%= link_to "Log In", login_path, class: "bar btn btn-outline-dark" %>
-          <%= link_to "Sign Up", new_user_path, class: "bar btn btn-outline-dark" %>
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="row">
+            <div class="logo"> NameOfApp </div>
+          <div>
+            <%= link_to "Log In", login_path, class: "bar btn btn-outline-dark" %>
+            <%= link_to "Sign Up", new_user_path, class: "bar btn btn-outline-dark" %>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
+  <div class="container">
 
     <%= yield %>
+  </div>
   </body>
 </html>

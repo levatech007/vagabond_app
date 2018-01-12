@@ -17,6 +17,27 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
   end
 
+  def edit
+    @user = User.find_by_id(params[:id])
+  end
+
+  def update
+    @user = User.find_by_id(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      flash[:notice] = "Unable to edit"
+      redirect_to edit_user_path(user)
+    end
+  end
+
+    def destroy
+      @user = User.find_by_id(params[:id])
+      @user.destroy
+      redirect_to root_path
+    end
+
+
   private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :user_city, :password)

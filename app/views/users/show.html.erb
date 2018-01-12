@@ -1,9 +1,24 @@
+<div class="row justify-content-md-center">
+  <div class="col-sm-6">
+    <h3>Name: <%= @user.first_name %></h3>
+      <% full_date = @user.created_at %>
+      <% date = full_date.to_s %>
+      <% month = date[5..6] %>
+      <% day = date[8..9] %>
+      <% year = date[0..3] %>
+    <h4>Date joined: <%= "#{month}/#{day}/#{year}" %></h4>
+    <h4>Current city: <%= @user.user_city %></h4>
+    <%= link_to "Edit profile", edit_user_path, class: "btn btn-outline-dark" %>
+    <%= link_to "Delete profile", user_path(@user), method: :delete, class: "btn btn-outline-danger" %>
+  </div>
 
-<h3>User: <%= @user.first_name %></h3>
-  <% full_date = @user.created_at %>
-  <% date = full_date.to_s %>
-  <% month = date[5..6] %>
-  <% day = date[8..9] %>
-  <% year = date[0..3] %>
-<h4>Date joined: <%= "#{month}/#{day}/#{year}" %></h4>
-<h4>Current city: <%= @user.user_city %></h4>
+  <div class="col-sm-6">
+    <h2>User posts:</h2>
+      <div class="row">
+        <div class="col-sm-12">
+          <h3>San Francisco</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum augue ipsum, sit amet eleifend lectus dapibus nec. Proin a augue et lacus sodales suscipit ut a nisi. Maecenas sed pulvinar sem. Aenean accumsan tellus ut ipsum auctor, et sodales ligula tempor. Nulla neque leo, porta in lorem sit amet, gravida vestibulum tellus. Aliquam in mauris et est rutrum suscipit id sed ipsum. Aliquam eu libero interdum, placerat ligula ac, sollicitudin mauris. Morbi venenatis magna vitae tortor gravida, ac iaculis tellus vulputate. Sed nec lacus neque.</p>
+        </div>
+      </div>
+  </div>
+</div>
