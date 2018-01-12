@@ -1,8 +1,11 @@
 <h2>All Posts Index here</h2>
 <% @posts.each do |post| %>
 	<ul>
-		<li>Title: <%= post.title %> </li>
-		<li>Author: <%= post.author %> </li>
-		<li>Content: <%= post.content %> </li>
+		<li><strong>Title:</strong> <%= post.title %> </li>
+		<li><strong>Author:</strong> <%= post.author %> </li>
+		<li><strong>Content:</strong> <%= post.content %> </li>
+		<%= link_to "Check this Post", post_path(post.id) %>
+		<br>
 	</ul>
 <% end %>
+<%= link_to "Back to Root-Page", root_path %>
