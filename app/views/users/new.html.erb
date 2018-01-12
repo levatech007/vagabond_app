@@ -1,0 +1,24 @@
+
+<div class="col-md-6">
+  <h1>Users can sign up here!</h1>
+</div>
+<div class="col-md-6">
+  <%= form_for users_new_path do |f| %>
+    <div class="form-group">
+      <%= f.text_field :first_name, placeholder: "First name", class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :last_name, placeholder: "Last name", class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :current_city, placeholder: "Your city", class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.email_field :email, placeholder: "Email", class:"form-control" %>
+    </div>
+    <div class="form-group">
+      <%= f.password_field :password, placeholder: "Please enter new password", class:"form-control" %>
+    </div>
+    <%= f.submit "Save Creature", class:"btn btn-primary" %>
+  <% end %>
+</div>
