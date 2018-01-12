@@ -1,3 +1,35 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 18px;
+	background: #f2f5f8;
+	font-weight: 550;
+}
+
+.navbar {
+	background-color: #427df4;
+	font-color: white;
+	font-family: 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 1.4em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-shadow: 0 0 5px rgba(218, 62, 62, 0.2);
+}
+
+.login {
+	color: white;
+}
+
+.logo {
+	font-family: 'Alfa Slab One', cursive;
+	color: white;	
+}
+
+.bar {
+	font-family: 'Carter One', cursive;
+	color: white;
+}

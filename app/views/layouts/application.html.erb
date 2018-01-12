@@ -6,9 +6,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Carter+One" rel="stylesheet">
   </head>
 
   <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+          <div class="logo"> NameOfApp </div>
+        <div>
+          <%= link_to "Log In", root_path, class: "bar btn btn-outline-dark" %>
+          <%= link_to "Sign Up", root_path, class: "bar btn btn-outline-dark" %>
+        </div>
+      </div> 
+    </nav>
+
     <%= yield %>
   </body>
 </html>
