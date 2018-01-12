@@ -10,7 +10,7 @@
 Post.destroy_all
 
 
-Post.create([	
+Post.create([
   {
     title: "Gate One day Trip",
     author: "H. Racker",
