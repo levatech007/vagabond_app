@@ -1,0 +1,8 @@
+<h2>All Posts Index here</h2>
+<% @posts.each do |post| %>
+	<ul>
+		<li>Title: <%= post.title %> </li>
+		<li>Author: <%= post.author %> </li>
+		<li>Content: <%= post.content %> </li>
+	</ul>
+<% end %>
