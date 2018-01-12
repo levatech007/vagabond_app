@@ -18,8 +18,13 @@
       <div class="row">
 
           <div class="col-sm-12">
-
+            <% @user.posts.each do |post| %>
+                <h2>Title: <%= post.title %></h2>
+                <h3>Anthor: <%= post.author %></h3>
+                <p>Content: <%= post.content %></p>
+            <% end %>
           </div>
       </div>
   </div>
 </div>
+
