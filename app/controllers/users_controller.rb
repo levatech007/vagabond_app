@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    WelcomeMailer.welcome_email(@user).deliver_later
       redirect_to user_path(@user)
   end
 
