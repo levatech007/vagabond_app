@@ -15,3 +15,7 @@
 //= require jquery3
 //= require bootstrap
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
+$(document).foundation();
+

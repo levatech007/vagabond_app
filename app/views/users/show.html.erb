@@ -1,6 +1,6 @@
 <div class="row justify-content-md-center">
   <div class="col-sm-5">
-    <%=image_tag("profile_pic.png") %>
+    <%=link_to image_tag("profile_pic.png"), edit_user_path %>
     <h3>Name: <%= @user.first_name %></h3>
       <% full_date = @user.created_at %>
       <% date = full_date.to_s %>
@@ -22,7 +22,6 @@
         <div class="col-sm-10">
           <% @user.posts.each do |post| %>
               <h2>Title: <%= post.title %></h2>
-              <h3>Anthor: <%= post.author %></h3>
               <p>Content: <%= post.content %></p>
           <% end %>
         </div>

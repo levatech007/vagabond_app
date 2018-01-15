@@ -34,6 +34,9 @@ gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'sprockets-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'simple_form'
+gem 'foundation-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

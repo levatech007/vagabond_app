@@ -31,6 +31,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
