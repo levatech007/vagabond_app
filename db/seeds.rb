@@ -5,9 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 User.destroy_all
 Post.destroy_all
-#City.destroy_all
+City.destroy_all
 
 users_data = []
 4.times do
@@ -42,3 +43,5 @@ cities.each do |city|
     post: posts.sample
   }
 end
+
+City.create(cities_data)
