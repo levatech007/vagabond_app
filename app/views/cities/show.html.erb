@@ -1,8 +1,13 @@
 
-<div class = "cityHead">
-<h2><%= @city.name %></h2>
+<div class="row">
+<h2><%= @city.proper_name %></h2>
 </div>
 
 <div class = "cityImage">
-<img src = "<%= @city.image %>">
+ <%= image_tag @city.image %>
 </div>
+
+<% @city.posts.each do |post| %>
+  <h2><%= post.title %></h2>
+  <p><%= post.content %></p>
+<% end %>

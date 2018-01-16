@@ -34,7 +34,7 @@ gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'sprockets-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "paperclip"
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'font-awesome-rails'
