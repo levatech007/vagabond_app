@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get "/posts", to: "posts#index", as: "posts"
   get "/posts/:id", to: "posts#show", as: "post"
   get "/cities/:name/posts/new", to: "posts#new", as: "new_post"
-  post "/cities/:name/posts", to: "posts#create"
+  post "/cities/:name/posts", to: "posts#create", as: "cities_posts"
   get "/posts", to: "posts#destroy"
   get "/posts/:id/edit", to: "posts#edit", as: "edit_post"
   put "/posts/:id", to: "posts#update"

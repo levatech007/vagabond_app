@@ -14,17 +14,15 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(posts_params)
-		city = City.find_by(params[:name])
+		city = City.find_by_name(params[:name])
 		@post.city_id = city.id
 		@post.user_id = current_user.id
-
 		if @post.save
 			redirect_to city_path
 		else
-			flash[:notice] = "Try create again!"
+			flash[:notice] = "Try to create it again!"
 			redirect_to new_post_path
 		end
-	end
 
 	def edit
 		@post = Post.find_by_id(params[:id])
