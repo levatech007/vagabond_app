@@ -23,14 +23,23 @@ class PostsController < ApplicationController
 			flash[:notice] = "Try to create it again!"
 			redirect_to new_post_path
 		end
-	end 
+	end
 
 	def edit
 		@post = Post.find_by_id(params[:id])
 	end
 
 	def update
+		post = Post.find_by_id(params[:id])
 
+		if post.update(posts_params)
+			flash[:notice] = "Updated successfully!"
+			redirect_to user_path(post.user_id)
+		else
+			flash[:notice] = "Try again!"
+			redirect_to edit_post_path
+		end
+		
 	end
 
 	def destroy
