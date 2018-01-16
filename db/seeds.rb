@@ -5,8 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
 User.destroy_all
 Post.destroy_all
+#City.destroy_all
 
 users_data = []
 4.times do
@@ -19,6 +23,7 @@ users_data = []
     email: "#{first[0]}_#{last}@example.com".downcase,
     password: "1234"
   }
+
 end
 users = User.create(users_data)
 
@@ -30,4 +35,14 @@ posts_data = []
     user: users.sample
   }
 end
-post = Post.create(posts_data)
+posts = Post.create(posts_data)
+
+cities = ["San Francisco", "Los Angeles", "New York", "Miami", "Chicago"]
+cities_data = []
+cities.each do |city|
+  cities_data << {
+    city_name: city,
+    city_img: "#{city.downcase.delete(' ')}_city.jpg",
+    post: posts.sample
+  }
+end

@@ -1,6 +1,5 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -31,6 +30,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
@@ -47,6 +49,26 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = true
+
+  # ActionMailer Config
+
+  config.action_mailer.default_url_options = { :host => 'herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['GMAIL_USERNAME'],
+   :password             => ENV['GMAIL_PASSWORD'],
+   :authentication       => "login",
+   :enable_starttls_auto => true
+  }
+
+ # Send email in development mode?
+  config.action_mailer.perform_deliveries = true
+
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
