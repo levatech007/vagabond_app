@@ -1,5 +1,11 @@
 class CitiesController < ApplicationController
-	def show
-		@city = City.find_by_name(params[:name])
-	end
+
+  def index
+
+  end
+
+  def show
+
+  end
+
 end

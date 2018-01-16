@@ -49,6 +49,26 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = true
+
+  # ActionMailer Config
+
+  config.action_mailer.default_url_options = { :host => 'herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['GMAIL_USERNAME'],
+   :password             => ENV['GMAIL_PASSWORD'],
+   :authentication       => "login",
+   :enable_starttls_auto => true
+  }
+
+ # Send email in development mode?
+  config.action_mailer.perform_deliveries = true
+
 
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
