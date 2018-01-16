@@ -1,11 +1,16 @@
-
 <div class="row">
-<h2><%= @city.proper_name %></h2>
+ <%= image_tag @city.image, class: "img-fluid" %>
 </div>
 
-<div class = "cityImage">
- <%= image_tag @city.image %>
+<div class="row justify-content-md-center">
+  <h1 class="display-4"><%= @city.proper_name %></h1>
 </div>
+
+<div class="row justify-content-md-center">
+  <%= link_to "Add new post", new_post_path, class: "btn btn-outline-dark" %>
+</div>
+
+<hr>
 
 <% @city.posts.each do |post| %>
   <h2><%= post.title %></h2>

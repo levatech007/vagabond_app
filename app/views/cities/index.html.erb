@@ -1,5 +1,12 @@
-<h2>Cities index</h2>
+<div class="row justify-content-md-center headline">
+  <h2>Select your destination</h2>
+</div>
 
-<% @cities.each do |city| %>
-  <h3><%= city.proper_name %></h3>
-<% end %>
+<div class="row">
+  <% @cities.each do |city| %>
+    <div class="col-md-3 city-link">
+      <%= image_tag city.image %>
+      <h3><%= city.proper_name %></h3>
+    </div>
+  <% end %>
+</div>
