@@ -5,7 +5,7 @@ class CitiesController < ApplicationController
   end
 
   def show
-    
+
   end
 
 end

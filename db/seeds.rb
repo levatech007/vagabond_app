@@ -23,7 +23,7 @@ users_data = []
     email: "#{first[0]}_#{last}@example.com".downcase,
     password: "1234"
   }
-  
+
 end
 users = User.create(users_data)
 

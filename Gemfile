@@ -34,6 +34,9 @@ gem 'bootstrap', '~> 4.0.0.beta3'
 gem 'sprockets-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem "paperclip"
+gem 'simple_form'
+gem 'foundation-rails'
 gem 'font-awesome-rails'
 
 group :development, :test do
