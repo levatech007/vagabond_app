@@ -5,6 +5,8 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		@user = User.find_by_id(@post.user_id)
+
 	end
 
 	def create
@@ -17,4 +19,5 @@ class PostsController < ApplicationController
 	def post_params
 		params.require(:post).permit(:title, :author, :content)
     end
+
 end

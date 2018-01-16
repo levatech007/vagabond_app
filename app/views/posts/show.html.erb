@@ -1,8 +1,17 @@
-<h1>Show one Post</h1>
 
-	<ul>
-		<h2>Title: <%= @post.title %></h2>
-		<h3>Anthor: <%= @post.author %></h3>
-		<p>Content: <%= @post.content%></p>
-	</ul>
 
+<div class="row justify-content-lg-center">
+  <div class="col-sm-2">
+    <%=link_to image_tag(@user.avatar.url(:small)), user_path(@user) %>
+    <h3><%= @user.first_name %></h3>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-10">
+      	<h2><%= @post.title %></h2>
+      	<p><%= @post.content %></p>
+      </div>
+    </div>
+  </div>
+</div>

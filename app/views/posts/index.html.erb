@@ -2,7 +2,6 @@
 <% @posts.each do |post| %>
 	<ul>
 		<li><strong>Title:</strong><%= link_to "#{post.title}", post_path(post.id) %></li>
-		<li><strong>Author:</strong> <%= post.author %> </li>
 		<li><strong>Content:</strong> <%= post.content %> </li>
 		<br>
 	</ul>
