@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/login", to: "sessions#new"
-  get '/logout', to: 'sessions#destroy'
+  get '/logout', to: "sessions#destroy"
   post "/sessions", to: "sessions#create"
 
   get "/posts", to: "posts#index", as: "posts"
   get "/posts/:id", to: "posts#show", as: "post"
   get "/posts", to: "posts#create"
+
+  get "/cities/:name", to: "cities#show", as: "city"
 end

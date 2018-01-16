@@ -31,3 +31,19 @@ posts_data = []
   }
 end
 post = Post.create(posts_data)
+
+
+# City.create([
+#   {
+#   name: "san-francisco"
+#   },
+#   {
+#   name: "new-york"
+#   },
+#   {
+#   name: "seattle"
+#   }
+# ])
+
+
+
