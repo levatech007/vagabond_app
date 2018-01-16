@@ -13,11 +13,10 @@ Rails.application.routes.draw do
   get "/posts/:id", to: "posts#show", as: "post"
   get "/cities/:name/posts/new", to: "posts#new", as: "new_post"
   post "/cities/:name/posts", to: "posts#create", as: "cities_posts"
-  get "/posts", to: "posts#destroy"
   get "/posts/:id/edit", to: "posts#edit", as: "edit_post"
   patch "/posts/:id", to: "posts#update"
   put "/posts/:id", to: "posts#update"
-
+  delete "/posts/:id", to: "posts#destroy"
 
   get "/cities", to: "cities#index"
   get "/cities/:name", to: "cities#show", as: "city"

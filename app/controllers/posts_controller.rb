@@ -39,13 +39,13 @@ class PostsController < ApplicationController
 			flash[:notice] = "Try again!"
 			redirect_to edit_post_path
 		end
-		
+
 	end
 
 	def destroy
-		post = Post.find_by(params[:id])
+		post = Post.find_by_id(params[:id])
 		post.delete
-
+		redirect_to user_path(post.user_id)
 
 	end
 
