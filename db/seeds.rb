@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
 User.destroy_all
 Post.destroy_all
 #City.destroy_all
@@ -20,6 +23,7 @@ users_data = []
     email: "#{first[0]}_#{last}@example.com".downcase,
     password: "1234"
   }
+  
 end
 users = User.create(users_data)
 
