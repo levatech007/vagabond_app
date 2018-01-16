@@ -30,4 +30,4 @@ posts_data = []
     user: users.sample
   }
 end
-post = Post.create(posts_data)
+Post.create(posts_data)

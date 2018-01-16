@@ -10,8 +10,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-      redirect_to user_path(@user)
+    login(@user)
+    redirect_to user_path(@user)
   end
+
 
   def show
     @user = User.find_by_id(params[:id])
