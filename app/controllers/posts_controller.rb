@@ -15,26 +15,36 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(posts_params)
 		city = City.find_by(params[:name])
+		@post.city_id = city.id
+		@post.user_id = current_user.id
 
+		if @post.save
+			redirect_to city_path
+		else
+			flash[:notice] = "Try create again!"
+			redirect_to new_post_path
+		end
+	end
 
-    # if current_user.id === params[:post][:user_id]
-    #   Post.save(city_id: params[:post][:city_id], user_id: params[:post][:user_id])
-    #   redirect_to post_path
-    # else
-    #   flash[:notice] = "Error"
-    #   redirect_to cities_path
-    # end
+	def edit
+		@post = Post.find_by_id(params[:id])
+	end
+
+	def update
+		
 	end
 
 	def destroy
 		post = Post.find_by(params[:id])
 		post.delete
+
+
 	end
 
 	private
 
 	def posts_params
-		params.require(:post).permit(:title, :content)
+		params.require(:post).permit(:title, :content, :city_id, :user_id)
 	end
 
 end
