@@ -1,3 +1,15 @@
 // Place all the styles related to the cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.city-link img {
+  width: 300px;
+}
+
+.city-link {
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.headline {
+  margin-bottom: 30px;
+}
