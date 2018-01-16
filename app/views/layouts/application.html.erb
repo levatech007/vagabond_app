@@ -14,7 +14,7 @@
   <body>
     <nav class="navbar navbar-default" role="navigation">
       <div class="container">
-          <div class="logo">NameOfApp </div>
+          <div class="logo"><%= link_to "VAGABOND", root_path %></div>
           <% if current_user %>
             <div>
               <%= link_to "Profile", user_path(current_user), class: "bar btn btn-outline-dark" %>
@@ -26,14 +26,18 @@
               <%= link_to "Log In", login_path, class: "bar btn btn-outline-dark" %>
             </div>
               <% end %>
+            </div>
       </nav>
 
-      <div class:"notice">
         <% flash.each do |name, msg| %>
-          <p><small> <%= name.capitalize %>: <%= msg %> </small></p>
-          <% end %>
-      </div>
-      <div class="container-fluid">
+          <div class="row justify-content-md-center">
+            <div class="alert alert-secondary notice" role="alert">
+              <h5><%= name.capitalize %>: <%= msg %></h5>
+            </div>
+          </div>
+        <% end %>
+
+      <div class="container-fluid main">
         <%= yield %>
       </div>
   </body>

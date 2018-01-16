@@ -10,6 +10,7 @@
 
 User.destroy_all
 Post.destroy_all
+#City.destroy_all
 
 users_data = []
 4.times do
@@ -34,4 +35,14 @@ posts_data = []
     user: users.sample
   }
 end
-post = Post.create(posts_data)
+posts = Post.create(posts_data)
+
+cities = ["San Francisco", "Los Angeles", "New York", "Miami", "Chicago"]
+cities_data = []
+cities.each do |city|
+  cities_data << {
+    city_name: city,
+    city_img: "#{city.downcase.delete(' ')}_city.jpg",
+    post: posts.sample
+  }
+end

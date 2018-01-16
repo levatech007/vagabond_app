@@ -18,11 +18,7 @@ body {
 	text-shadow: 0 0 5px rgba(218, 62, 62, 0.2);
 }
 
-.login {
-	color: white;
-}
-
-.logo {
+.logo a {
 	font-family: 'Alfa Slab One', cursive;
 	color: white;
 }
@@ -30,6 +26,14 @@ body {
 .bar {
 	font-family: 'Carter One', cursive;
 	color: white;
+}
+
+.notice {
+	margin-top: 20px;
+}
+
+.main {
+	margin-top: 50px;
 }
 
 .jumbotron {
