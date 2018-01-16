@@ -10,10 +10,13 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
 
   get "/posts", to: "posts#index", as: "posts"
+  post "/posts", to: "posts#create"
   get "/posts/:id", to: "posts#show", as: "post"
-  get "/posts", to: "posts#create"
+
 
   get "/cities", to: "cities#index"
-  get "/cities/:name", to: "cities#show"
+  get "/cities/:name", to: "cities#show", as: "city"
+
+  get "/cities/:name/posts/new", to: "posts#new"
 
 end
