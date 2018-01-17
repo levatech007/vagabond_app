@@ -54,6 +54,29 @@ Rails.application.configure do
   # Prepend all log lines with the following tags.
   config.log_tags = [ :request_id ]
 
+
+  # Raises error for missing translations
+  # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.perform_caching = false
+  config.action_mailer.raise_delivery_errors = true
+
+  # ActionMailer Config
+
+  config.action_mailer.default_url_options = { :host => 'https://glacial-island-32057.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+   :address              => "smtp.gmail.com",
+   :port                 => 587,
+   :user_name            => ENV['GMAIL_USERNAME'],
+   :password             => ENV['GMAIL_PASSWORD'],
+   :authentication       => "login",
+   :enable_starttls_auto => true
+  }
+
+ # Send email in development mode?
+  config.action_mailer.perform_deliveries = true
+
   # Use a different cache store in production.
   # config.cache_store = :mem_cache_store
 
