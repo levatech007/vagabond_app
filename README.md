@@ -1,7 +1,7 @@
 # VAGABOND
 Welcome to Vagabond! This is an app for the traveller who wants to stay informed and share their experiences with other users.
 
-In the app, you are able to:
+### In the app, you are able to:
 - Create a profile (Check your inbox for a welcome email)
 - Write a review for a city that you have visited to help future travellers 
 - Edit you profile
