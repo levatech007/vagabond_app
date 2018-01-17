@@ -62,7 +62,7 @@ Rails.application.configure do
 
   # ActionMailer Config
 
-  config.action_mailer.default_url_options = { :host => 'https://pacific-anchorage-41202.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'https://glacial-island-32057.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
