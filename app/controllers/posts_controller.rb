@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 		if @post.save
 			redirect_to city_path(city.name)
 		else
-			flash[:notice] = "Try to create it again!"
+			flash[:notice] = "Oops! Something went wrong! Try again!"
 			redirect_to new_post_path
 		end
 	end
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
 			flash[:notice] = "Updated successfully!"
 			redirect_to user_path(post.user_id)
 		else
-			flash[:notice] = "Try again!"
+			flash[:notice] = "Oops! Something went wrong! Try again!"
 			redirect_to edit_post_path
 		end
 	end
