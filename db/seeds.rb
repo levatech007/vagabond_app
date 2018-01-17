@@ -21,7 +21,8 @@ users_data = []
     last_name: last,
     user_city: "San Francisco",
     email: "#{first[0]}_#{last}@example.com".downcase,
-    password: "1234"
+    password: "1234",
+    avatar_file_name: "profile_pic.png"
   }
 
 end
