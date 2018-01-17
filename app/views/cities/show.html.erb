@@ -1,16 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1 class="display-5"><%= @city.proper_name %></h1>
+    </div>
+    <div class="col-md-1 offset-md-5">
+      <%= link_to "Add new post", new_post_path, class: "btn btn-outline-dark add-post float-right" %>
+    </div>
+  </div>
+</div>
+
+<%= image_tag @city.image, class: "img-fluid" %>
+
 <div class="container main">
-   <%= image_tag @city.image, class: "img-fluid" %>
-
-  <div class="row justify-content-md-center">
-    <h1 class="display-4"><%= @city.proper_name %></h1>
-  </div>
-
-  <div class="row justify-content-md-center">
-    <%= link_to "Add new post", new_post_path, class: "btn btn-outline-dark" %>
-  </div>
-
-  <hr>
-
   <% @city.posts.each do |post| %>
     <h2><%= link_to post.title, post_path(post) %></h2>
     <p><%= post.content %></p>
