@@ -1,7 +1,7 @@
 <div class="container main">
   <div class="row">
     <div class="col-sm-4">
-      <%= image_tag(@user.avatar.url(:large)) %>
+      <%= image_tag(@user.avatar.url(:original)), class:"proPic" %>
       <h3>Name: <%= @user.first_name %></h3>
         <% full_date = @user.created_at %>
         <% date = full_date.to_s %>
