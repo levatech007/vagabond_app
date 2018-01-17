@@ -49,7 +49,6 @@ class PostsController < ApplicationController
 		post = Post.find_by_id(params[:id])
 		post.delete
 		redirect_to user_path(post.user_id)
-
 	end
 
 	private
