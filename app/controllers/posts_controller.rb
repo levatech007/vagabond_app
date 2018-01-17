@@ -17,6 +17,8 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.new(posts_params)
 		city = City.find_by_name(params[:name])
+		@post.city_id = city.id
+		@post.user_id = current_user.id
 		if @post.save
 			redirect_to city_path(city.name)
 		else
@@ -44,7 +46,8 @@ class PostsController < ApplicationController
 	def destroy
 		post = Post.find_by(params[:id])
 		post.delete
-		redirect_to user_path(post.user_id)
+		redirect_to user_path(post.user_id)		
+
 	end
 
 	private
@@ -53,5 +56,8 @@ class PostsController < ApplicationController
 		params.require(:post).permit(:title, :content, :city_id, :user_id)
 	end
 
+	def user_params
+    	params.require(:user).permit(:avatar, :first_name, :last_name, :email, :user_city, :password)
+    end
 
 end
