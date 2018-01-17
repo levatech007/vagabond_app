@@ -6,7 +6,7 @@
 
 <div class="row justify-content-md-center">
   <div class="col-md-4">
-    <%= form_for @post do |f| %>
+    <%= form_for @post, url: user_path do |f| %>
       <div class="form-group">
         <%= f.text_field :title, placeholder: "Post title", class:"form-control" %>
       </div>

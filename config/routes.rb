@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "site#index"
 
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy] do
-  	resources :posts, only: [:show]
+  	resources :posts, only: [:show]  
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/login", to: "sessions#new"
@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get "/posts/:id", to: "posts#show", as: "post"
   get "/posts/:id/edit", to: "posts#edit", as: "edit_post"
   patch "/posts/:id", to: "posts#update"
-  put "/posts/:id", to: "posts#update"
   delete "/posts/:id", to: "posts#destroy"
 
   get "/cities/:name/posts/new", to: "posts#new", as: "new_post"

@@ -37,10 +37,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by_id(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@user)
+      redirect_to user_path(@post)
     else
       flash[:notice] = "Unable to edit"
-      redirect_to edit_user_path(@user)
+      redirect_to edit_post_path(@post)
     end
   end
 
