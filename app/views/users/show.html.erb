@@ -1,7 +1,7 @@
 <div class="container main">
   <div class="row">
     <div class="col-sm-4">
-        <%= image_tag(@user.avatar.url(:original), size:"200x200")%>
+        <%= image_tag(@user.avatar.url(:original), size:"200x200", class: "profile-pic")%>
       <h3>Name: <%= @user.first_name %></h3>
         <% full_date = @user.created_at %>
         <% date = full_date.to_s %>
@@ -10,6 +10,7 @@
         <% year = date[0..3] %>
       <h4>Date joined: <%= "#{month}/#{day}/#{year}" %></h4>
       <h4>Current city: <%= @user.user_city %></h4>
+      <hr>
       <% if current_user.id == @user.id %>
         <%= link_to "Edit profile", edit_user_path, class: "btn btn-outline-dark" %>
         <%= link_to "Delete profile", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
@@ -20,7 +21,7 @@
       <% @user.posts.each do |post| %>
         <div class="row review">
           <div class="col-sm-11">
-            <h2><%= link_to post.title, post_path(post) %></h2>
+            <h3><%= post.city.proper_name %> - <%= link_to post.title, post_path(post) %></h3>
             <p><%= post.content %></p>
           </div>
           <div class="col-sm-1 float-right">
