@@ -15,6 +15,7 @@
     <nav class="navbar navbar-default" role="navigation">
       <div class="container">
           <div class="logo"><%= link_to "VAGABOND", root_path %></div>
+          <%= link_to "Cities", cities_path, class: "bar btn btn-outline-dark" %>
           <% if current_user %>
             <div>
               <%= link_to "Profile", user_path(current_user), class: "bar btn btn-outline-dark" %>
@@ -37,8 +38,6 @@
           </div>
         <% end %>
 
-      <div class="container main">
         <%= yield %>
-      </div>
   </body>
 </html>

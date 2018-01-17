@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  #before_action :require_login, only: [:show]
+  before_action :require_login, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -11,11 +11,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    WelcomeMailer.welcome_email(@user).deliver_later
-    
-    login(@user)
-    redirect_to user_path(@user)
+    @user = User.new(user_params)
+
+    if @user.valid?
+      @user.save
+      WelcomeMailer.welcome_email(@user).deliver_later
+      login(@user)
+      redirect_to user_path(@user)
+    else
+      flash[:notice] = "Try again!"
+      redirect_to new_user_path
+    end
   end
 
 
