@@ -12,10 +12,10 @@
 <%= image_tag @city.image, class: "img-fluid" %>
 
 <div class="container main">
-  <div class="row">
+  <div class="row review">
     <% @city.posts.each do |post| %>
       <div class="col-md-2">
-        <%= image_tag("profile_pic_thumb.png") %>
+        <%=link_to image_tag(post.user.avatar.url(:original), size: "100x100", class: "profile-pic"), user_path(post.user_id) %>
       </div>
       <div class="col-md-10">
         <h2><%= link_to post.title, post_path(post) %></h2>

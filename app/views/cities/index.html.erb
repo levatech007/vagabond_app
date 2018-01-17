@@ -1,12 +1,12 @@
 <div class="container main">
   <div class="row justify-content-md-center headline">
-    <h2>Select your destination</h2>
+    <h1 class="display-5">Select your destination</h2>
   </div>
 
-  <div class="row">
+  <div class="row justify-content-md-center">
     <% @cities.each do |city| %>
-      <div class="col-md-3 city-link">
-        <%= image_tag city.image %>
+      <div class="col-md-3 city-link text-center">
+        <%= image_tag city.image, class: "profile-pic" %>
         <h3><%= link_to city.proper_name, city_path(city.name) %></h3>
       </div>
     <% end %>
