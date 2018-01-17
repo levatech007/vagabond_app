@@ -12,20 +12,8 @@ User.destroy_all
 Post.destroy_all
 City.destroy_all
 
-users_data = []
-4.times do
-  first = FFaker::Name.first_name
-  last = FFaker::Name.last_name
-  users_data << {
-    first_name: first,
-    last_name: last,
-    user_city: "San Francisco",
-    email: "#{first[0]}_#{last}@example.com".downcase,
-    password: "1234"
-  }
 
-end
-users = User.create(users_data)
+
 
 city_names = ["San Francisco", "Los Angeles", "New York", "Miami", "Chicago"]
 cities_data = []
@@ -44,7 +32,6 @@ posts_data = []
   posts_data << {
     title: "Travel review",
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nunc nisl, lacinia sit amet fringilla ac, posuere quis dui. Sed vel fermentum orci. Aenean a turpis quam. Ut turpis magna, lobortis a purus in, cursus tempus elit. Sed dignissim laoreet sagittis. Quisque nec ornare neque. Sed sed metus sollicitudin elit congue placerat et vel enim. In vitae arcu a purus hendrerit condimentu",
-    user: users.sample,
     city: cities.sample
   }
 end

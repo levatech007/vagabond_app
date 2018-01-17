@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
 	before_action :require_login, only: [:create, :edit, :update, :destroy]
 
 	def index
@@ -45,6 +44,7 @@ class PostsController < ApplicationController
 		end
 	end
 
+
 	def destroy
 		post = Post.find_by_id(params[:id])
 		post.delete
@@ -56,5 +56,6 @@ class PostsController < ApplicationController
 	def posts_params
 		params.require(:post).permit(:title, :content, :city_id, :user_id)
 	end
+
 
 end

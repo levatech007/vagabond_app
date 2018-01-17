@@ -4,7 +4,7 @@
   </div>
   <div class="row">
     <div class="col-sm-4">
-      <%=link_to image_tag(@user.avatar.url(:small)), user_path(@user) %>
+      <%=link_to image_tag(@user.avatar.url(:original), size: "100x100"), user_path(@user) %>
       <h3>Name: <%= @user.first_name %></h3>
   		<h3>Current city: <%= @user.user_city %></h3>
     </div>
