@@ -12,7 +12,8 @@ class PostsController < ApplicationController
 	end
 
 	def new
-		 @post = Post.new
+		@city = City.find_by_name(params[:name])
+		@post = Post.new
 	end
 
 	def create

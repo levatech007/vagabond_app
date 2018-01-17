@@ -12,8 +12,15 @@
 <%= image_tag @city.image, class: "img-fluid" %>
 
 <div class="container main">
-  <% @city.posts.each do |post| %>
-    <h2><%= link_to post.title, post_path(post) %></h2>
-    <p><%= post.content %></p>
-  <% end %>
+  <div class="row">
+    <% @city.posts.each do |post| %>
+      <div class="col-md-2">
+        <%= image_tag("profile_pic_thumb.png") %>
+      </div>
+      <div class="col-md-10">
+        <h2><%= link_to post.title, post_path(post) %></h2>
+        <p><%= post.content %></p>
+      </div>
+    <% end %>
+  </div>
 </div>

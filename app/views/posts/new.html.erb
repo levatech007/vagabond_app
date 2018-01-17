@@ -1,19 +1,24 @@
-<div class="row justify-content-md-center form">
-  <div class="col-sm-4">
-    <h1>Create a new post!</h1>
+<div class="container main">
+  <div class="row">
+    <h1 class="display-5"><%= @city.proper_name %></h1>
   </div>
-</div>
+  <div class="row justify-content-md-center form">
+    <div class="col-sm-4">
+      <h1>Create a new post</h1>
+    </div>
+  </div>
 
-<div class="row justify-content-md-center">
-  <div class="col-md-4">
-    <%= form_for @post, url: cities_posts_path do |f| %>
-      <div class="form-group">
-        <%= f.text_field :title, placeholder: "Post title", class:"form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.text_area :content, placeholder: "My post", class:"form-control" %>
-      </div>
-      <%= f.submit "Save Post", class:"btn btn-primary"  %>
-    <% end %>
+  <div class="row justify-content-md-center">
+    <div class="col-md-4">
+      <%= form_for @post, url: cities_posts_path do |f| %>
+        <div class="form-group">
+          <%= f.text_field :title, placeholder: "Post title", class:"form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :content, placeholder: "My post", class:"form-control" %>
+        </div>
+        <%= f.submit "Save Post", class:"btn btn-primary"  %>
+      <% end %>
+    </div>
   </div>
 </div>
