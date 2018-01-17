@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+	before_action :require_login, only: [:create, :edit, :update, :destroy]
+
 	def index
 		@posts = Post.all
 	end
@@ -18,7 +21,7 @@ class PostsController < ApplicationController
 		@post.city_id = city.id
 		@post.user_id = current_user.id
 		if @post.save
-			redirect_to city_path
+			redirect_to city_path(city.name)
 		else
 			flash[:notice] = "Try to create it again!"
 			redirect_to new_post_path
