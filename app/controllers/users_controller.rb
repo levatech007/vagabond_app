@@ -22,6 +22,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Try again!"
       redirect_to new_user_path
     end
+ 
   end
 
 
