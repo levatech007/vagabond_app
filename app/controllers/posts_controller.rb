@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 	end
 
 	def new
+		@city = City.find_by_name(params[:name])
 		 @post = Post.new
 	end
 
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
  	end
 
 	def destroy
-		post = Post.find_by(params[:id])
+		post = Post.find_by_id(params[:id])
 		post.delete
 		redirect_to user_path(post.user_id)		
 
@@ -56,8 +57,5 @@ class PostsController < ApplicationController
 		params.require(:post).permit(:title, :content, :city_id, :user_id)
 	end
 
-	def user_params
-    	params.require(:user).permit(:avatar, :first_name, :last_name, :email, :user_city, :password)
-    end
 
 end

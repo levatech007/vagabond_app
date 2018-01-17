@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to user_path(@user)
     else
-      flash[:notice] = "Try again!"
+      flash[:notice] = "All field are requied! Please try again!"
       redirect_to new_user_path
     end
  
@@ -37,10 +37,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by_id(params[:id])
     if @user.update(user_params)
-      redirect_to user_path(@post)
+      redirect_to user_path(@user)
     else
       flash[:notice] = "Unable to edit"
-      redirect_to edit_post_path(@post)
+      redirect_to edit_user_path(@user)
     end
   end
 
