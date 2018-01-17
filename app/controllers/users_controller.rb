@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       login(@user)
       redirect_to user_path(@user)
     else
-      flash[:notice] = "All field are requied! Please try again!"
+      flash[:notice] = "All fields are required! Please try again!"
       redirect_to new_user_path
     end
  
