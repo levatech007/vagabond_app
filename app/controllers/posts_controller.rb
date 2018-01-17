@@ -1,7 +1,4 @@
 class PostsController < ApplicationController
-
-	before_action :require_login, only: [:create, :edit, :update, :destroy]
-
 	def index
 		@posts = Post.all
 	end
@@ -21,34 +18,16 @@ class PostsController < ApplicationController
 		@post.city_id = city.id
 		@post.user_id = current_user.id
 		if @post.save
-			redirect_to city_path(city.name)
+			redirect_to city_path
 		else
 			flash[:notice] = "Try to create it again!"
 			redirect_to new_post_path
 		end
 	end
 
-	def edit
-		@post = Post.find_by_id(params[:id])
-	end
-
-	def update
-		post = Post.find_by_id(params[:id])
-
-		if post.update(posts_params)
-			flash[:notice] = "Updated successfully!"
-			redirect_to user_path(post.user_id)
-		else
-			flash[:notice] = "Try again!"
-			redirect_to edit_post_path
-		end
-	end
-
 	def destroy
-		post = Post.find_by_id(params[:id])
+		post = Post.find_by(params[:id])
 		post.delete
-		redirect_to user_path(post.user_id)
-
 	end
 
 	private
