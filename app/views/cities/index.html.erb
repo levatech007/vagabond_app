@@ -1,12 +1,14 @@
-<div class="row justify-content-md-center headline">
-  <h2>Select your destination</h2>
-</div>
+<div class="container main">
+  <div class="row justify-content-md-center headline">
+    <h2>Select your destination</h2>
+  </div>
 
-<div class="row">
-  <% @cities.each do |city| %>
-    <div class="col-md-3 city-link">
-      <%= image_tag city.image %>
-      <h3><%= city.proper_name %></h3>
-    </div>
-  <% end %>
+  <div class="row">
+    <% @cities.each do |city| %>
+      <div class="col-md-3 city-link">
+        <%= image_tag city.image %>
+        <h3><%= link_to city.proper_name, city_path(city.name) %></h3>
+      </div>
+    <% end %>
+  </div>
 </div>

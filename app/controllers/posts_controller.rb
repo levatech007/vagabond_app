@@ -39,7 +39,6 @@ class PostsController < ApplicationController
 			flash[:notice] = "Try again!"
 			redirect_to edit_post_path
 		end
-
 	end
 
 	def destroy

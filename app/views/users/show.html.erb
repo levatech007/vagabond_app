@@ -1,29 +1,31 @@
-<div class="row">
-  <div class="col-sm-4">
-    <%=link_to image_tag(@user.avatar.url(:large)), edit_user_path %>
-    <h3>Name: <%= @user.first_name %></h3>
-      <% full_date = @user.created_at %>
-      <% date = full_date.to_s %>
-      <% month = date[5..6] %>
-      <% day = date[8..9] %>
-      <% year = date[0..3] %>
-    <h4>Date joined: <%= "#{month}/#{day}/#{year}" %></h4>
-    <h4>Current city: <%= @user.user_city %></h4>
-    <%= link_to "Edit profile", edit_user_path, class: "btn btn-outline-dark" %>
-    <%= link_to "Delete profile", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
-  </div>
+<div class="container main">
+  <div class="row">
+    <div class="col-sm-4">
+      <%=link_to image_tag(@user.avatar.url(:large)), edit_user_path %>
+      <h3>Name: <%= @user.first_name %></h3>
+        <% full_date = @user.created_at %>
+        <% date = full_date.to_s %>
+        <% month = date[5..6] %>
+        <% day = date[8..9] %>
+        <% year = date[0..3] %>
+      <h4>Date joined: <%= "#{month}/#{day}/#{year}" %></h4>
+      <h4>Current city: <%= @user.user_city %></h4>
+      <%= link_to "Edit profile", edit_user_path, class: "btn btn-outline-dark" %>
+      <%= link_to "Delete profile", user_path(@user), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+    </div>
 
-  <div class="col-sm-8">
-    <div class="row">
-      <div class="col-sm-12 review">
-        <% @user.posts.each do |post| %>
-          <h2><%= link_to post.title, post_path(post) %></h2>
-          <p><%= post.content %></p>
-          <% if current_user %>
-            <%= link_to "Edit post", edit_post_path(post) %>
-            <%= link_to "Delete post", post_path(post.id), method: :delete, data: { confirm: "Are you sure?" } %>
+    <div class="col-sm-8">
+      <div class="row">
+        <div class="col-sm-12 review">
+          <% @user.posts.each do |post| %>
+            <h2><%= link_to post.title, post_path(post) %></h2>
+            <p><%= post.content %></p>
+            <% if current_user %>
+              <%= link_to "Edit post", edit_post_path(post), class: "btn btn-outline-dark" %>
+              <%= link_to "Delete post", post_path(post.id), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
   </div>
