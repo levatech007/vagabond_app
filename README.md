@@ -1,7 +1,6 @@
 # README
 
-#VAGABOND
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# VAGABOND
+This is an app for the traveller who wants to be informed.  
 
 Built with Ruby on Rails
