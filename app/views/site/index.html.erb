@@ -16,6 +16,8 @@
         <h4><%= link_to "Where do you want to travel?", cities_path %></h4>
       </div>
     </div>
+    <!-- These carousel items should NOT be hardcoded -->
+    <!-- In your site_controller.rb's index method, add a @cities = City.all and iterate through those @cities in this template -->
     <div class="carousel-item">
       <%= image_tag "sanfrancisco_city.jpg", class: "d-block w-100" %>
       <div class="carousel-caption d-none d-md-block">
