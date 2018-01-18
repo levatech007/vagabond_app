@@ -1,6 +1,7 @@
 class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_secure_password
 
   has_attached_file :avatar, styles: { small: "64x64", med: "100x100", large: "300x300" }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180117030654) do
+ActiveRecord::Schema.define(version: 20180118164613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,14 @@ ActiveRecord::Schema.define(version: 20180117030654) do
     t.text "image"
     t.string "description"
     t.text "proper_name"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "post_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -47,8 +55,12 @@ ActiveRecord::Schema.define(version: 20180117030654) do
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.bigint "comment_id"
+    t.index ["comment_id"], name: "index_users_on_comment_id"
   end
 
+  add_foreign_key "comments", "posts"
   add_foreign_key "posts", "cities"
   add_foreign_key "posts", "users"
+  add_foreign_key "users", "comments"
 end
