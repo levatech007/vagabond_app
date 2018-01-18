@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 	before_action :require_login, only: [:create, :edit, :update, :destroy]
+	before_action :check_auth, only: [:edit, :update, :destroy]
 
 	def index
 		@posts = Post.all
@@ -56,6 +57,14 @@ class PostsController < ApplicationController
 	def posts_params
 		params.require(:post).permit(:title, :content, :city_id, :user_id)
 	end
+
+	def check_auth
+    @post = Post.find_by_id(params[:id])
+    if current_user != @post.user
+      flash[:notice] = "No hacking!"
+      redirect_to login_path
+    end
+  end
 
 
 end

@@ -46,11 +46,11 @@ class UsersController < ApplicationController
     end
   end
 
-    def destroy
-      @user = User.find_by_id(params[:id])
-      @user.destroy
-      redirect_to root_path
-    end
+  def destroy
+    @user = User.find_by_id(params[:id])
+    @user.destroy
+    redirect_to root_path
+  end
 
   private
 
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
   end
 
   def check_auth
-    @user = @user = User.find_by_id(params[:id])
+    @user = User.find_by_id(params[:id])
     if current_user != @user
       flash[:notice] = "No hacking!"
       redirect_to login_path
