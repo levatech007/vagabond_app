@@ -55,7 +55,7 @@ class PostsController < ApplicationController
 	private
 
 	def posts_params
-		params.require(:post).permit(:title, :content, :city_id, :user_id)
+		params.require(:post).permit(:title, :content)
 	end
 
 	def check_auth
