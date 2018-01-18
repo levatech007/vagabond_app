@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :require_login, only: [:edit, :update, :destroy]
+  before_action :check_auth, only: [:edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -36,6 +37,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:id])
+
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
@@ -44,16 +46,24 @@ class UsersController < ApplicationController
     end
   end
 
-    def destroy
-      @user = User.find_by_id(params[:id])
-      @user.destroy
-      redirect_to root_path
-    end
+  def destroy
+    @user = User.find_by_id(params[:id])
+    @user.destroy
+    redirect_to root_path
+  end
 
   private
 
   def user_params
     params.require(:user).permit(:avatar, :first_name, :last_name, :email, :user_city, :password)
+  end
+
+  def check_auth
+    @user = User.find_by_id(params[:id])
+    if current_user != @user
+      flash[:notice] = "No hacking!"
+      redirect_to login_path
+    end
   end
 
 end
