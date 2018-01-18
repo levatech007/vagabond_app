@@ -2,16 +2,16 @@
   <div class="col-sm-4">
     <%= form_for @user do |f| %>
       <div class="form-group">
-        <%= f.text_field :first_name, placeholder: "First name", class:"form-control" %>
+        <%= f.text_field :first_name, placeholder: "First name", required: true, class:"form-control" %>
       </div>
       <div class="form-group">
-        <%= f.text_field :last_name, placeholder: "Last name", class:"form-control" %>
+        <%= f.text_field :last_name, placeholder: "Last name", required: true, class:"form-control" %>
       </div>
       <div class="form-group">
-        <%= f.text_field :user_city, placeholder: "Your city", class:"form-control" %>
+        <%= f.text_field :user_city, placeholder: "Your city", required: true, class:"form-control" %>
       </div>
       <div class="form-group">
-        <%= f.file_field :avatar, class:"form-control" %>
+        <%= f.file_field :avatar, required: true, class:"form-control" %>
       </div>
       <%= f.submit "Update profile", class: "btn btn-primary" %>
     <% end %>
