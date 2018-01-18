@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { maximum: 255 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: true, length: { maximum: 255 }
+  validates :password, presence: true, length: {within: 6..40}, :if => :password
 
   def self.confirm(params)
     @user = User.find_by({email: params[:email]})
