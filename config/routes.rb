@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get "/cities", to: "cities#index"
   get "/cities/:name", to: "cities#show", as: "city"
 
+  get "/posts/:id/comments", to: "comments#index"
+
 end
