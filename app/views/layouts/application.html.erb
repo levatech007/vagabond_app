@@ -27,7 +27,7 @@
               <%= link_to "Log In", login_path, class: "bar btn btn-outline-dark" %>
             </div>
           <% end %>
-            </div>
+        </div>
       </nav>
 
         <% flash.each do |name, msg| %>
@@ -38,8 +38,9 @@
           </div>
         <% end %>
 
-        <%= yield %>
-
+        <div class="base">
+          <%= yield %>
+        </div>
         <footer></footer>
   </body>
 </html>
